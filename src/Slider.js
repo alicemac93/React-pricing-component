@@ -44,7 +44,7 @@ const PrettoSlider = withStyles({
 
 // data
 
-const rangesToMap = [
+const plansToMap = [
   {pageviews: 10, unit: "K", price: 8}, 
   {pageviews: 50, unit: "K", price: 12}, 
   {pageviews: 100,unit: "K", price: 16}, 
@@ -53,22 +53,22 @@ const rangesToMap = [
 ]
 
   function SliderContainer(props) {
-    const [ranges, setRanges] = useState(rangesToMap[2]);
+    const [plan, setPlans] = useState(plansToMap[2]);
 
     const handleChange = (e, val) => {
-        setRanges(rangesToMap[val])
+        setPlans(plansToMap[val])
     }
 
     return (
     <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
       <TopWrapper>
-      <p>{ranges.pageviews}{ranges.unit} PAGEVIEWS</p> 
-      <p><span style={{color: "hsl(227, 35%, 25%)", fontWeight: "800", fontSize: "30px"}}>${(props.switchActive) ? (ranges.price*0.75).toFixed(2) : ranges.price}{(!props.switchActive) && ".00"}</span>/month</p>
+      <p>{plan.pageviews}{plan.unit} PAGEVIEWS</p> 
+      <p><span style={{color: "hsl(227, 35%, 25%)", fontWeight: "800", fontSize: "30px"}}>${(props.switchActive) ? (plan.price*0.75).toFixed(2) : plan.price}{(!props.switchActive) && ".00"}</span>/month</p>
       </TopWrapper>
       <PrettoSlider 
         defaultValue={2} 
         min={0}
-        max={rangesToMap.length-1}
+        max={plansToMap.length-1}
         onChange={handleChange}
       />
     </div>
