@@ -10,6 +10,7 @@ function Bottom(props) {
         border-radius: 22.5px;
         padding: 10px 32px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        font-weight: 800;
         &:hover{
             cursor: pointer
         }
@@ -20,6 +21,9 @@ function Bottom(props) {
         justify-content: space-between;
         width: 425px;
         margin-left: -25px;
+        @media screen and (max-width: 600px){
+            width: 100%
+        }
     `
     return (
     <BottomWrapper>

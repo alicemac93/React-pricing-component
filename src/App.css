@@ -29,3 +29,16 @@ li {
   line-height: 2;
   font-size: 15px;
 }
+
+@media screen and (max-width: 600px){
+  * {
+    flex-direction: column;
+  }
+  header {
+    margin: 0 auto;
+  }
+  .component-container {
+    width: 100%;
+    margin: 0 auto;
+  }
+}

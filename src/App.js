@@ -14,9 +14,10 @@ function App() {
 
   return (
     <div className="App">
+    <header>
       <h1>Simple, traffic-based pricing</h1>
-      <p>Sign-up for our 30-day trial. No credit card required.</p>
-
+      <p>Sign-up for our 30-day trial. No credit card required.</p> 
+  </header>
     <div className="component-container">
       <SliderContainer 
         switchActive={switchActive}
@@ -25,7 +26,7 @@ function App() {
         isActive={switchActive}
         handleSwitch={handleSwitch}
       />
-      <Bottom />
+      <Bottom  className="bottom"/>
     </div>
     </div>
   );

@@ -42,16 +42,18 @@ const AntSwitch = withStyles(() => ({
   border-radius: 22.5px;
   padding: 3px 5px;
   margin-left: 10px;
+  @media (max-width: 600px){
+    background-color: "red";
+  }
   `
   const SwitchWrapper = styled.div`
     padding: 25px 0;
-  &:childern {
+    > * {
       padding: 10px
   }
   `
-  
+    function SwitchContainer(props) {
 
-  function SwitchContainer(props) {
     return (
     <SwitchWrapper>
       <span>Monthly billing</span>
@@ -60,7 +62,7 @@ const AntSwitch = withStyles(() => ({
           onChange={props.handleSwitch}
       />
       <span>Yearly Billing </span>
-      <Discount>25% discount</Discount>
+      <Discount>{(window.innerWidth > 600) ? "25% discount" : "25%"}</Discount>
     </SwitchWrapper>
     );
 }
